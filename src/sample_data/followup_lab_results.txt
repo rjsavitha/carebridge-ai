@@ -1,0 +1,23 @@
+LABORATORY & FOLLOW-UP DIAGNOSTIC REPORT
+Patient Name: Eleanor Vance
+DOB: 11/14/1951
+Date of Service: 08/25/2026
+Facility: St. Jude Health Outpatient Lab
+
+TEST RESULTS:
+1. Serum Electrolytes & Renal Panel:
+   - Serum Sodium: 138 mEq/L (Normal)
+   - Potassium: 5.1 mEq/L (Slightly Elevated - Monitor closely)
+   - Serum Creatinine: 1.4 mg/dL (Baseline stable)
+   - BUN: 22 mg/dL
+
+2. BNP (B-Type Natriuretic Peptide): 310 pg/mL (Improved down from 850 pg/mL at discharge)
+
+REVISED CLINICAL ORDERS & INSTRUCTIONS:
+- Lisinopril 10mg: HOLD / PAUSE temporarily due to borderline high potassium level (5.1 mEq/L). Primary Care Provider to re-evaluate in 5 days.
+- Furosemide (Lasix): Continue 20mg twice daily as prescribed by Cardiology on 08/19/2026.
+- Potassium Monitoring: Avoid high-potassium foods and supplements until re-tested.
+
+UPCOMING ACTIONS:
+- Repeat Renal & Potassium Panel required on 08/30/2026.
+- Contact clinic immediately if experiencing muscle weakness, chest pain, or irregular heartbeat.

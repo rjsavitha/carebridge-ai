@@ -1,0 +1,18 @@
+PATIENT DISCHARGE SUMMARY
+Patient Name: Eleanor Vance
+DOB: 11/14/1951
+Admission Date: 08/10/2026
+Discharge Date: 08/18/2026
+
+DIAGNOSIS: Congestive Heart Failure (Exacerbation)
+
+DISCHARGE MEDICATIONS:
+1. Furosemide (Lasix) 40mg - Take 1 tablet by mouth daily in the morning at 8:00 AM.
+2. Lisinopril 10mg - Take 1 tablet daily.
+
+CARE INSTRUCTIONS & RESTRICTIONS:
+- Fluid Restriction: Do NOT exceed 1.5 Liters of total fluid intake per 24 hours.
+- Daily Weigh-ins: Weigh yourself every morning before breakfast.
+
+FOLLOW-UP APPOINTMENTS:
+- Cardiology Follow-Up: Visit Dr. Aris Thorne in 14 days for a post-discharge checkup.
