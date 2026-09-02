@@ -226,12 +226,12 @@ Return a SINGLE, valid JSON object matching this structure strictly:
     }
 
     let response;
-    let modelUsed = 'Gemini 3.6 Flash (Primary High-Precision Model)';
+    let modelUsed = 'Gemini 1.5 Flash (Primary Model)';
 
     try {
       // 1. Primary Attempt
       response = await ai.models.generateContent({
-        model: 'gemini-3.6-flash',
+        model: 'gemini-1.5-flash',
         config: {
           temperature: 0.1, // Slight temperature boost encourages fuller descriptive text
         },
@@ -243,12 +243,12 @@ Return a SINGLE, valid JSON object matching this structure strictly:
         primaryError.message?.includes('429') ||
         primaryError.message?.includes('quota')
       ) {
-        console.warn('Gemini 3.6 Flash quota exceeded. Switching to fallback model.');
-        modelUsed = 'Gemini 3.5 Flash-Lite (Fallback Fast Engine)';
+        console.warn('Gemini 1.5 Flash quota exceeded. Switching to fallback model.');
+        modelUsed = 'Gemini 1.5 Pro (Fallback Engine)';
 
         // 2. Fallback Attempt
         response = await ai.models.generateContent({
-          model: 'gemini-3.5-flash-lite',
+          model: 'gemini-1.5-pro',
           config: {
             temperature: 0.1,
             responseMimeType: 'application/json'
