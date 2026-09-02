@@ -1,12 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 import { NextRequest, NextResponse } from 'next/server';
 
-const ai = new GoogleGenAI({
-  vertexai: true,
-  project: process.env.GOOGLE_CLOUD_PROJECT,
-  location: process.env.GOOGLE_CLOUD_LOCATION || 'us-central1',
-});
-
 function getMimeType(file: File): string {
   if (file.type && file.type !== 'application/octet-stream') {
     return file.type;
@@ -22,6 +16,13 @@ function getMimeType(file: File): string {
 
 export async function POST(req: NextRequest) {
   try {
+    // Instantiate dynamically per request to prevent build-time evaluation errors
+    const ai = new GoogleGenAI({
+      vertexai: true,
+      project: process.env.GCP_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT || 'project-e300586c-6579-4e5c-b39',
+      location: process.env.GCP_REGION || process.env.GOOGLE_CLOUD_LOCATION || 'us-central1',
+    });
+
     const formData = await req.formData();
     const files = formData.getAll('files') as File[];
 
