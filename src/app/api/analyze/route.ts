@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
     const ai = new GoogleGenAI({
       vertexai: true,
       project: process.env.GCP_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT || 'project-e300586c-6579-4e5c-b39',
-      location: process.env.GCP_REGION || process.env.GOOGLE_CLOUD_LOCATION || 'us-central1',
+      location: process.env.GCP_REGION || process.env.GOOGLE_CLOUD_LOCATION || 'global',
     });
 
     const formData = await req.formData();
@@ -226,12 +226,12 @@ Return a SINGLE, valid JSON object matching this structure strictly:
     }
 
     let response;
-    let modelUsed = 'Gemini 1.5 Flash (Primary Model)';
+    let modelUsed = 'Gemini 3.6 Flash (Primary High-Precision Model)';
 
     try {
       // 1. Primary Attempt
       response = await ai.models.generateContent({
-        model: 'gemini-1.5-flash',
+        model: 'gemini-3.6-flash',
         config: {
           temperature: 0.1, // Slight temperature boost encourages fuller descriptive text
         },
@@ -243,12 +243,12 @@ Return a SINGLE, valid JSON object matching this structure strictly:
         primaryError.message?.includes('429') ||
         primaryError.message?.includes('quota')
       ) {
-        console.warn('Gemini 1.5 Flash quota exceeded. Switching to fallback model.');
-        modelUsed = 'Gemini 1.5 Pro (Fallback Engine)';
+        console.warn('Gemini 3.6 Flash quota exceeded. Switching to fallback model.');
+        modelUsed = 'Gemini 3.5 Flash-Lite (Fallback Fast Engine)';
 
         // 2. Fallback Attempt
         response = await ai.models.generateContent({
-          model: 'gemini-1.5-pro',
+          model: 'gemini-3.5-flash-lite',
           config: {
             temperature: 0.1,
             responseMimeType: 'application/json'
